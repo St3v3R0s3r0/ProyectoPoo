@@ -11,4 +11,8 @@ public class Registrar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar);
     }
+
+
+
+
 }
