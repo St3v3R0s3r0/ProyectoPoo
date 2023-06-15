@@ -4,7 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background = "@drawable/fondo"
+    android:background="@drawable/fondo"
+    android:onClick="vistaFiesta"
     tools:context=".activity_preguntas">
+
+    <Button
+        android:id="@+id/btnHistoria"
+        android:layout_width="293dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="254dp"
+        android:onClick="vistaHistoria"
+        android:text="Conocer de Historia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNaturaleza" />
+
+    <Button
+        android:id="@+id/btnFiesta"
+        android:layout_width="293dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="41dp"
+        android:onClick="vistaFiesta"
+        android:text="Ir de Fiesta"
+        app:layout_constraintBottom_toTopOf="@+id/btnNaturaleza"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TituloMenu" />
+
+    <Button
+        android:id="@+id/btnNaturaleza"
+        android:layout_width="293dp"
+        android:layout_height="48dp"
+        android:onClick="vistaNaturaleza"
+        android:text="Ir al Aire Libre"
+        app:layout_constraintBottom_toTopOf="@+id/btnHistoria"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFiesta" />
+
+    <TextView
+        android:id="@+id/TituloMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:layout_marginBottom="556dp"
+        android:fontFamily="sans-serif-black"
+        android:text="¿Qué te gustaria hacer hoy? "
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,15 @@
         android:theme="@style/Theme.ProyectoPoo"
         tools:targetApi="31">
         <activity
+            android:name=".activity_historia"
+            android:exported="false" />
+        <activity
+            android:name=".activity_naturaleza"
+            android:exported="false" />
+        <activity
+            android:name=".activity_Fiestas"
+            android:exported="false" />
+        <activity
             android:name=".activity_preguntas"
             android:exported="false" />
         <activity

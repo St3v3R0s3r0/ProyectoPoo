@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">ProyectoPoo</string>
+    //Pantalla Inicio:
     <string name="tv1">Bienvenido</string>
     <string name="btnIngresar">Ingresar</string>
     <string name="btnRegistrar">Registrarse</string>
+
+
+
+
 </resources>
