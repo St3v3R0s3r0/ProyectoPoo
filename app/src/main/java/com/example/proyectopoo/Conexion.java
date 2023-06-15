@@ -5,11 +5,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
-public class Conexion extends SQLiteOpenHelper{
+public class Conexion extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NOMBRE = "destinos.db";
     private static final String TABLE_ = "destinos.db";
+
     public Conexion(@Nullable Context context) {
         super(context, DATABASE_NOMBRE, null, DATABASE_VERSION);
     }
@@ -35,16 +36,7 @@ public class Conexion extends SQLiteOpenHelper{
                 "   USU_CORREO       VARCHAR(40),\n" +
                 "   PRIMARY KEY (USU_NOMBRE)\n" +
                 ");");
-        db.execSQL("CREATE TABLE DESTINO_FAVORITO\n" +
-                "(\n" +
-                "   DES_CODIGO           VARCHAR(20),\n" +
-                "   USU_NOMBRE           VARCHAR(20),\n" +
-                "   PRIMARY KEY (DES_CODIGO, USU_NOMBRE),\n" +
-                "   foreign key (DES_CODIGO)\n" +
-                "         references DESTINO (DES_CODIGO),\n" +
-                "   foreign key (USU_NOMBRE)\n" +
-                "         references USUARIO (USU_NOMBRE)\n" +
-                ");");
+
         db.execSQL("CREATE  INDEX DESTINO_ES_PREFERIBLE_USUARIO_ ON DESTINO_FAVORITO\n" +
                 "(\n" +
                 "   DES_CODIGO ASC\n" +
