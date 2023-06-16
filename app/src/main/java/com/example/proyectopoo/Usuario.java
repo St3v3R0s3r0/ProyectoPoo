@@ -44,7 +44,6 @@ public class Usuario extends Conexion{
         return usuario;
     }
 
-
     static public Usuario inicioSesion(String nombre, String contrasena){
         Usuario usuario = null;
 

@@ -17,4 +17,6 @@ public class Registrar extends AppCompatActivity {
         Intent pregunta = new Intent(this, activity_preguntas.class);
         startActivity(pregunta);
     }
+
+
 }

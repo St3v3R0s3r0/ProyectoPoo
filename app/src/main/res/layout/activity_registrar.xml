@@ -64,7 +64,6 @@
         android:layout_marginLeft="80dp"
         android:ems="10"
         android:hint="Ingrese su correo"
-        android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
