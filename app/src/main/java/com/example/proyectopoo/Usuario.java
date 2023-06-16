@@ -27,20 +27,28 @@ public class Usuario extends Conexion{
     }
 
     public long registroUsuario(){
+        long id=-1;
         ContentValues values = new ContentValues();
 
         values.put("usu_nombre", this.nombre);
         values.put("usu_contrasena", this.contrasena);
         values.put("usu_correo", this.correo);
 
-        long id = db.insert("usuario",null,values);
+        try {
+            id = db.insert("usuario", null, values);
+        } catch (Exception e){
 
+        }
         return id;
     }
 
     public boolean inicioSesion(){
-        Cursor cursor = db.rawQuery("SELECT * FROM usuario WHERE usu_nombre = "+this.nombre+" AND usu_contrasena = "+this.contrasena,null);
+        Cursor cursor = null;
+        try {
+            cursor = db.rawQuery("SELECT * FROM usuario WHERE usu_nombre = " + this.nombre + " AND usu_contrasena = " + this.contrasena, null);
+        } catch (Exception e){
 
+        }
         boolean usuario = cursor.moveToFirst();
 
         return usuario;

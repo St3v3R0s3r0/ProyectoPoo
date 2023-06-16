@@ -23,16 +23,15 @@ public class Registrar extends AppCompatActivity {
         txtIngresoConstrasenia = findViewById(R.id.txtIngresoConstrasenia);
         btnRegistro = findViewById(R.id.btnRegistro);
 
-
     }
     public void vistaPregunta(View activity_preguntas){
-
+        this.registro(activity_preguntas);
         Intent pregunta = new Intent(this, activity_preguntas.class);
         startActivity(pregunta);
 
     }
 
-    public void Registro(){
+    public void registro(View activity_preguntas){
         Usuario usuario = new Usuario(Registrar.this,txtIngresoNombre.getText().toString(),txtIngresoConstrasenia.getText().toString(),txtIngresoCorreo.getText().toString());
         long id = usuario.registroUsuario();
 
@@ -45,9 +44,5 @@ public class Registrar extends AppCompatActivity {
         txtIngresoNombre.setText("");
         txtIngresoCorreo.setText("");
         txtIngresoConstrasenia.setText("");
-
-
     }
-
-
 }
