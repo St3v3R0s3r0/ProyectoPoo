@@ -2,6 +2,7 @@ package com.example.proyectopoo;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import androidx.annotation.Nullable;
 
@@ -25,16 +26,24 @@ public class Usuario extends Conexion{
         this.correo = correo;
     }
 
-    static Usuario getUsuario(String nombre, String contrasena){
-        Usuario usuario = null;
+    public void registroUsuario(){
+        ContentValues values = new ContentValues();
 
-        ContentValues values =new ContentValues();
+        values.put("usu_nombre", this.nombre);
+        values.put("usu_contrasena", this.contrasena);
+        values.put("usu_correo", this.correo);
+
+        db.insert("usuario",null,values);
+    }
+
+    public boolean inicioSesion(){
+        Cursor cursor = db.rawQuery("SELECT * FROM usuario WHERE usu_nombre = "+this.nombre+" AND usu_contrasena = "+this.contrasena,null);
+
+        boolean usuario = cursor.moveToFirst();
+
         return usuario;
     }
 
-    public void registroUsuario(){
-
-    }
 
     static public Usuario inicioSesion(String nombre, String contrasena){
         Usuario usuario = null;

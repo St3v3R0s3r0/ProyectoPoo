@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class Conexion extends SQLiteOpenHelper {
-
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NOMBRE = "destinos.db";
     private static final String TABLE_ = "destinos.db";
