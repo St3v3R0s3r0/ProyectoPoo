@@ -26,26 +26,22 @@ public class Usuario extends Conexion{
         this.correo = correo;
     }
 
-    public void registroUsuario(){
+    public long registroUsuario(){
         ContentValues values = new ContentValues();
 
         values.put("usu_nombre", this.nombre);
         values.put("usu_contrasena", this.contrasena);
         values.put("usu_correo", this.correo);
 
-        db.insert("usuario",null,values);
+        long id = db.insert("usuario",null,values);
+
+        return id;
     }
 
     public boolean inicioSesion(){
         Cursor cursor = db.rawQuery("SELECT * FROM usuario WHERE usu_nombre = "+this.nombre+" AND usu_contrasena = "+this.contrasena,null);
 
         boolean usuario = cursor.moveToFirst();
-
-        return usuario;
-    }
-
-    static public Usuario inicioSesion(String nombre, String contrasena){
-        Usuario usuario = null;
 
         return usuario;
     }
